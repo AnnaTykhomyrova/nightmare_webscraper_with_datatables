@@ -10,10 +10,12 @@ My first experience with Nightmare.js.
 
 ## Getting Started
 
-1. Clone this Github repo.
-2. if you want to see generated new file delete the included outputData.csv file. 
-3. Run ```DEBUG=nightmare node  nightmare.js```.
-4. Open generated outputData.csv file to confirm results.
+1. You need installed `npm` and `node.js` on your local machine.
+2. Clone this Github repo.
+3. Run `npm install` to install all dependencies.
+4. if you want to see generated new file delete the included outputData.csv file. 
+5. Run ```DEBUG=nightmare node  nightmare.js```.
+6. Open generated outputData.csv file to confirm results.
 
 ## Dependencies
 

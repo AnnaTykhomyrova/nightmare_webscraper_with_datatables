@@ -1,7 +1,7 @@
 {
   "name": "webscraper",
   "version": "1.0.0",
-  "description": "webscraper using nightmare.js",
+  "description": "webscraper that fetches data from datatables.net and exports it to .csv file",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
