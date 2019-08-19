@@ -4,6 +4,9 @@ var writer = csvWriter();
 var fs = require('fs');
 var Nightmare = require('nightmare');
 
+const resultElem = ".r > a";
+const correctLink = "https://datatables.net/";
+
 (async () => {
 	let nightmare;
 	try {
@@ -14,10 +17,13 @@ var Nightmare = require('nightmare');
 		.goto('https://www.google.com')		
 		.type('form[action*="/search"] [name=q]', 'datatables')
 		.click('form[action*="/search"] [type=submit]')
-		.wait()
+		.wait(resultElem)
 
-		/* click on datatables.net link */
-		.click('a[href^="https://datatables.net/"]')
+		/* click on correct link */
+		.evaluate((resultElem, correctLink) => {
+			const searchResult = Array.from(document.querySelectorAll(resultElem)).filter(a => a.href === correctLink);
+			searchResult[0].click()
+		}, resultElem, correctLink)
 
 		await nightmare
 			.wait('select[name="example_length"]')
